@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function DataSearch() {
     const[product,setProduct]=useState({})
-    const[id,setId]=useState()
+    const[id,setId]=useState(1)
 
     useEffect(()=>{
         axios

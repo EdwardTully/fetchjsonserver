@@ -1,5 +1,6 @@
 import DataFetch from './DataFetch';
 import DataSearch from './DataSearch';
+import DataPost from './DataPost';
 import './App.css';
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
     <div className="App">
     <DataFetch/>
     <DataSearch/>
+    <br/>
+    <DataPost/>
     </div>
   );
 }
