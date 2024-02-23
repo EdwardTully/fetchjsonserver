@@ -14,9 +14,22 @@ function DataPost() {
     category: newCategory,
     description: newDescr,
   };
+  const [newItem, setNewItem]= useState("")
 
   const [products, setProducts] = useState([]);
   // eslint-disable-next-line
+
+  const handleSubmit = () => {
+    console.log(products)
+    axios
+      .post(`http://localhost:4000/products`, newProd)
+      .then((res) =>{ 
+      console.log(res)
+      setNewItem(res.data)
+      })
+      .catch((err) => console.log(err));
+  };
+
 
   useEffect(()=>{
     axios
@@ -28,16 +41,8 @@ function DataPost() {
     .catch(err=>{
         console.log(err)
     })
-},[])
+}, [newItem])
 
- const handleSubmit = () => {
-    axios
-      .post(`http://localhost:4000/products`, newProd)
-      .then((res) =>{ 
-      console.log(res)
-      setProducts(res.data)})
-      .catch((err) => console.log(err));
-  };
 
 
   return (
@@ -70,7 +75,13 @@ function DataPost() {
         type="text"
         value={newDescr}
         onChange={(e) => setNewDescr(e.target.value)}/>
-      <button type='submit' onClick={()=>handleSubmit()}>Send Data</button>
+      <button type='button' onClick={()=>handleSubmit()}>Send Data</button>
+      <br/>
+      <ul>
+            {products.map((ea)=>
+               ( <li key={ea.id}>{`Product ${ea.id} is listed as ${ea.category} price and descr is ${ea.price}, ${ea.description}`}</li>)
+            )}
+        </ul>
     </div>
   );
 }

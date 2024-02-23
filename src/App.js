@@ -6,10 +6,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <DataFetch/>
+    
     <DataSearch/>
     <br/>
     <DataPost/>
+    <br/>
+    <DataFetch/>
     </div>
   );
 }

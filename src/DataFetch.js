@@ -19,8 +19,8 @@ function DataFetch() {
     <div>
         <h2>Data</h2>
         <ul>
-            {products.map(ea=>
-               ( <li key={ea.id}>{`Product ${ea.id} is listed as ${ea.category}`}</li>)
+            {products.map((ea)=>
+               ( <li key={ea.id}>{`Product ${ea.title} ${ea.description}`}</li>)
             )}
         </ul>
     </div>
