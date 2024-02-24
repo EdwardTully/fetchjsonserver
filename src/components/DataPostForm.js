@@ -1,50 +1,39 @@
 
-import {useForm} from 'react-hook-form'
-import {DevTool} from '@hookform/devtools'
+import { useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
 import axios from "axios";
 
-
 function DataPostForm() {
-//see FORMS-HOOKS project for notes on useForm use!
-    const form = useForm({
-        defaultValues:{
-            id: '',
-            title: '',
-            category: '',
-            price: '',
-            description: '',
-        }
-    })
+  //see FORMS-HOOKS project for notes on useForm use!
+  const form = useForm({
+    defaultValues: {
+      id: "",
+      title: "",
+      category: "",
+      price: "",
+      description: "",
+    },
+  });
 
-    const {register, control, handleSubmit, formState, reset}= form
+  const { register, control, handleSubmit, formState, reset } = form;
 
-    const {errors}= formState
+  const { errors } = formState;
 
-    let trueData = false;
-
-    
-
-    const onSubmit = (data)=>{
-       
-        axios
-        .post('http://localhost:4000/products',data)
-        .then((res)=>{
-            console.log(res)
-            if(res.data){
-                trueData= true
-            }
-           console.log(trueData)
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-        reset()
-
-    } 
-
+  const onSubmit = (data) => {
+    axios
+      .post("http://localhost:4000/products", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    reset();
+  };
 
   return (
-    <div>
+    <div className="assetForm">
+      <h3>Inventory Asset Entry</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="id">Id</label>
         <input
@@ -112,14 +101,10 @@ function DataPostForm() {
         <p className="errorss">{errors.description?.message}</p>
 
         <button>Enter Item</button>
-       
       </form>
       <DevTool control={control} />
-      
-      
-      
     </div>
   );
 }
 
-export default DataPostForm
+export default DataPostForm;

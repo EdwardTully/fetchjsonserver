@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function DataSearch() {
     const[product,setProduct]=useState({})
-    const[id,setId]=useState(1)
+    const[id,setId]=useState('')
 
     useEffect(()=>{
         axios
@@ -19,9 +19,9 @@ function DataSearch() {
   return (
     <div>
         <h2>Search Data</h2>
-        <input type='text' value={id} onChange={e => setId(e.target.value)}/>
+        <input className='searchInput' type='text' value={id} onChange={e => setId(e.target.value)}/>
 
-        <div>{`title ${product.title} category ${product.category} price ${product.price} description ${product.description}`}</div>
+        <div>{`ID ${product.id}:  ${product.title},  ${product.description}, $${product.price}  `}</div>
 
       
     </div>

@@ -12,29 +12,38 @@
   color: white;
   
 }
+.assetForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 form {
- margin-left:80px ;
+ margin-left:0px ;
 }
 .dataFetch{
   display: flex;
   width: 100%;
-  margin-left: 5px;
+  margin-left: 0px;
   flex-direction: column;
   align-items: center;
   padding-top: 5%;
-  height: 50%;
-  overflow: scroll;
-  scrollbar-width:none;
  
-  
+
 }
 .listItem{
-  padding: 2px;
+  padding-top: 3px;
 }
 .dataList{
   list-style-type: none;
+ }
+.listCnt{
+  height: 250px;
+  overflow:auto;
+  scrollbar-width: none;
 }
+
+
 input[type='text'],
 input[type='email'],
 input[type='number'],
@@ -50,6 +59,7 @@ input[type='data']{
   border-radius: 4px;
   margin-bottom: 20px;
 }
+
 .errorss{
  color: red;
 

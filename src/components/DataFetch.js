@@ -1,31 +1,42 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 
 function DataFetch() {
-    const[inventory,setInventory]=useState([])
+  const [inventory, setInventory] = useState([]);
 
-    useEffect(()=>{
-        axios
-        .get('http://localhost:4000/products')
-        .then(res => {
-            console.log(res)
-            setInventory(res.data)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    },[])
+  const findInventory = () => {
+    axios
+      .get("http://localhost:4000/products")
+      .then((res) => {
+        console.log(res);
+        setInventory(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // onSubmit={findInventory()}
   return (
+    <div className="dataFetch">
+      <h3>Inventory</h3>
 
-    <div className='dataFetch'>
-    <h3>Inventory</h3>
-     <ul className='dataList'>
-         {inventory.map((ea)=>
-            ( <li className='listItem' key={ea.id}>{`${ea.title} ${ea.description} item number ${ea.id} sale price $${ea.price}`}</li>)
-         )}
-     </ul>
- </div>
-  )
+      <button type="submit" onClick={findInventory}>
+        Show Inventory
+      </button>
+      <br/>
+      <div className="listCnt">
+        <ul className="dataList">
+          {inventory.map((ea) => (
+            <li
+              className="listItem"
+              key={ea.id}
+            >{`${ea.title} ${ea.description} item number ${ea.id} sale price $${ea.price}`}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 }
 
 export default DataFetch
