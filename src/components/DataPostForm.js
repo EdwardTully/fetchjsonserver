@@ -1,7 +1,8 @@
-import React,{useState, useEffect} from 'react'
+
 import {useForm} from 'react-hook-form'
 import {DevTool} from '@hookform/devtools'
 import axios from "axios";
+
 
 function DataPostForm() {
 //see FORMS-HOOKS project for notes on useForm use!
@@ -15,36 +16,32 @@ function DataPostForm() {
         }
     })
 
-    const {register, control, handleSubmit, formState}= form
+    const {register, control, handleSubmit, formState, reset}= form
 
     const {errors}= formState
 
-    const [inventory, setInventory]=useState([])
-    console.log(inventory)
+    let trueData = false;
+
+    
 
     const onSubmit = (data)=>{
+       
         axios
         .post('http://localhost:4000/products',data)
         .then((res)=>{
             console.log(res)
+            if(res.data){
+                trueData= true
+            }
+           console.log(trueData)
         })
         .catch((error)=>{
             console.log(error)
         })
-      
-}
-    
-useEffect(()=>{
-    axios
-    .get('http://localhost:4000/products')
-    .then(res => {
-        console.log(res)
-        setInventory(res.data)
-    })
-    .catch(err=>{
-        console.log(err)
-    })
-},[])
+        reset()
+
+    } 
+
 
   return (
     <div>
@@ -115,17 +112,11 @@ useEffect(()=>{
         <p className="errorss">{errors.description?.message}</p>
 
         <button>Enter Item</button>
+       
       </form>
       <DevTool control={control} />
       
-      <div className='dataFetch'>
-       <h3>Inventory</h3>
-        <ul className='dataList'>
-            {inventory.map((ea)=>
-               ( <li className='listItem' key={ea.id}>{`${ea.title} ${ea.description} item number ${ea.id} sale price $${ea.price}`}</li>)
-            )}
-        </ul>
-    </div>
+      
       
     </div>
   );
