@@ -1,7 +1,12 @@
 .App {
-  padding: 20%;
+  padding: 10%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
   margin: auto;
-  width: 100%;
+  width: 90%;
   background: black;
   background-size: auto;
   color: white;
@@ -9,9 +14,27 @@
 }
 
 form {
- margin-left: 15%;
+ margin-left:80px ;
 }
-
+.dataFetch{
+  display: flex;
+  width: 100%;
+  margin-left: 5px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  height: 50%;
+  overflow: scroll;
+  scrollbar-width:none;
+ 
+  
+}
+.listItem{
+  padding: 2px;
+}
+.dataList{
+  list-style-type: none;
+}
 input[type='text'],
 input[type='email'],
 input[type='number'],

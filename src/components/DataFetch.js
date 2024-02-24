@@ -16,11 +16,11 @@ function DataFetch() {
         })
     },[])
   return (
-    <div>
-        <h2>Data</h2>
-        <ul>
+    <div className='dataFetch'>
+       <h3>Inventory</h3>
+        <ul className='dataList'>
             {products.map((ea)=>
-               ( <li key={ea.id}>{`Product ${ea.title} ${ea.description}`}</li>)
+               ( <li key={ea.id}>{`${ea.title} ${ea.description} item number ${ea.id} sale price $${ea.price}`}</li>)
             )}
         </ul>
     </div>

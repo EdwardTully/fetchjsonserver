@@ -1,7 +1,7 @@
-import DataFetch from './DataFetch';
-//import DataSearch from './DataSearch';
-//import DataPost from './DataPost';
-import DataPostForm from './DataPostForm';
+//import DataFetch from './components/DataFetch';
+//import DataSearch from './components/DataSearch';
+//import DataPost from './components/DataPost';
+import DataPostForm from './components/DataPostForm';
 import './App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
     
    <DataPostForm/>
-    <DataFetch/>
+   
     </div>
   );
 }
