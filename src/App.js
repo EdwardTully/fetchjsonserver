@@ -1,16 +1,14 @@
 import DataFetch from './DataFetch';
-import DataSearch from './DataSearch';
-import DataPost from './DataPost';
+//import DataSearch from './DataSearch';
+//import DataPost from './DataPost';
+import DataPostForm from './DataPostForm';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
     
-    <DataSearch/>
-    <br/>
-    <DataPost/>
-    <br/>
+   <DataPostForm/>
     <DataFetch/>
     </div>
   );

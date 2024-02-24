@@ -20,7 +20,7 @@ function DataPost() {
   // eslint-disable-next-line
 
   const handleSubmit = () => {
-    console.log(products)
+    
     axios
       .post(`http://localhost:4000/products`, newProd)
       .then((res) =>{ 
