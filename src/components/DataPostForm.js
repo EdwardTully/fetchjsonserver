@@ -31,14 +31,7 @@ function DataPostForm() {
         .catch((error)=>{
             console.log(error)
         })
-        .get('http://localhost:4000/products')
-        .then((res)=>{
-            setInventory(res.data)
-
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+      
 }
     
 useEffect(()=>{
