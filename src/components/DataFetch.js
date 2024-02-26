@@ -4,6 +4,7 @@ import axios from 'axios'
 function DataFetch() {
   const [inventory, setInventory] = useState([]);
 
+
   const findInventory = () => {
     axios
       .get("http://localhost:4000/products")
@@ -15,6 +16,7 @@ function DataFetch() {
         console.log(err);
       });
   };
+
 
   // onSubmit={findInventory()}
   return (

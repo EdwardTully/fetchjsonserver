@@ -10,7 +10,7 @@ function DataPostForm() {
       id: "",
       title: "",
       category: "",
-      price: "",
+      price: 0,
       description: "",
     },
   });
@@ -22,12 +22,11 @@ function DataPostForm() {
   const onSubmit = (data) => {
     axios
       .post("http://localhost:4000/products", data)
-      .then((res) => {
-        console.log(res);
-      })
+
       .catch((error) => {
         console.log(error);
       });
+
     reset();
   };
 
@@ -35,19 +34,17 @@ function DataPostForm() {
     <div className="assetForm">
       <h3>Inventory Asset Entry</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="id">Id</label>
+        <label htmlFor="id">ID</label>
         <input
           type="text"
           id="id"
           {...register("id", {
             required: {
               value: true,
-              message: "Required field",
+              message: "category is required",
             },
           })}
         />
-        <p className="errorss">{errors.id?.message}</p>
-
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -108,3 +105,5 @@ function DataPostForm() {
 }
 
 export default DataPostForm;
+
+/**/

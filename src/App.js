@@ -4,6 +4,7 @@ import DataSearch from './components/DataSearch';
 import DataPostForm from './components/DataPostForm';
 import DataFetch from './components/DataFetch';
 import './App.css';
+import SortProducts from './components/SortProducts';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
    <DataPostForm/>
    <DataSearch/>
    <DataFetch/>
+   <SortProducts/>
    
     </div>
   );
