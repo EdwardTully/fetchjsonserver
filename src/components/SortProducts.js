@@ -8,7 +8,7 @@ function SortProducts() {
   const pullSortedHL = async() => {
     if (sel === "lh") {
       await axios
-        .get("http://localhost:3001/products?q=dog")
+        .get("http://localhost:3001/products?_sort=price")
         .then((res) => {
           console.log(res);
           setHTlPrices(res.data);
