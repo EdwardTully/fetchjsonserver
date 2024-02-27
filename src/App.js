@@ -12,8 +12,9 @@ function App() {
     
    <DataPostForm/>
    <DataSearch/>
-   <DataFetch/>
    <SortProducts/>
+   <DataFetch/>
+   
    
     </div>
   );

@@ -13,7 +13,7 @@ function DataSearch() {
       .then((res) => {
         
         setList(res.data);
-        console.log(res.data);
+        
       })
       .catch((err) => {
         console.log(err);
