@@ -21,7 +21,7 @@ function DataPostForm() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:4000/products", data)
+      .post("http://localhost:3001/products", data)
 
       .catch((error) => {
         console.log(error);

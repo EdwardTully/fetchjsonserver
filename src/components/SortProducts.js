@@ -5,10 +5,10 @@ function SortProducts() {
   const [hTlPrices, setHTlPrices] = useState([]);
   const [sel, setSel] = useState("");
 
-  const pullSortedHL = () => {
+  const pullSortedHL = async() => {
     if (sel === "lh") {
-      axios
-        .get("http://localhost:4000/products?_sort=price")
+      await axios
+        .get("http://localhost:3001/products?q=dog")
         .then((res) => {
           console.log(res);
           setHTlPrices(res.data);
@@ -17,8 +17,8 @@ function SortProducts() {
           console.log(err);
         });
     } else{
-      axios
-        .get("http://localhost:4000/products?", {params:{_sort: 'price', _order:'ascending'}})
+      await axios
+        .get("http://localhost:3001/products?_sort=price&_order=desc")
         .then((res) => {
           setHTlPrices(res.data);
           console.log(res)
@@ -32,6 +32,7 @@ function SortProducts() {
     <div className="dataFetch">
       <h3>Products Sorted by Price</h3>
       <select value={sel} onChange={(e) => setSel(e.target.value)}>
+        <option></option>
         <option type="text" value="lh">
           Price Low to High
         </option>

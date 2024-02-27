@@ -7,7 +7,7 @@ function DataFetch() {
 
   const findInventory = () => {
     axios
-      .get("http://localhost:4000/products")
+      .get("http://localhost:3001/products?_page=2&_limit=10")
       .then((res) => {
         console.log(res);
         setInventory(res.data);

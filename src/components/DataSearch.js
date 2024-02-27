@@ -9,7 +9,7 @@ function DataSearch() {
   const filterData = (event) => {
     event.preventDefault()
     axios
-      .get(`http://localhost:4000/products?${val}=${term}`)
+      .get(`http://localhost:3001/products?${val}=${term}`)
       .then((res) => {
         
         setList(res.data);
