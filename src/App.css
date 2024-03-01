@@ -64,3 +64,35 @@ input[type='data']{
  color: red;
 
 }
+button{
+  height: 35px;
+  background: lightgray;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+}
+.tableCont{
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding-top: 30px;
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+table tdtable th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:hover {background-color: #ddd;}
+table th, tfoot td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
