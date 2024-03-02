@@ -8,33 +8,47 @@ function DataTableTwo() {
     //In the columns const, we designate the col title, a selector which ties row data to the column, and a sortable option which will make the data sortable
     //styling can be added as an atribue to the component. It is set as a constant with a syle object.  It seems limited and cumbersome.
 
+    //image sources added to JSON file, and img tag inserted into <td>
+
     //data configuration for table making
     const columns = [
         {
             name: "Id",
             selector: row=> row.id,
-            sortable: true
+            sortable: true,
+            width: "10%"
         },
         {
             name: "Title",
             selector: row=> row.title,
-            sortable: true
+            sortable: true,
+            width: "25%"
         },
         {
             name: "Category",
             selector: row=> row.category,
-            sortable: true
+            sortable: true,
+            width: "20%"
         },
         {
             name: "Price",
             selector: row=> row.price,
-            sortable: true
+            sortable: true,
+            width: "10%"
         },
         {
             name: "Description",
             selector: row=> row.description,
-            sortable: true
+            sortable: true,
+            width: "25%"
         },
+        //add appropriate image path to db, in this case it is in public folder, but can be a link. Then have selector run a function which adds in the image file to the src attribute of the an inserted img tag.  That is all!!! NOTE ea.image
+        {
+            name: "",
+            selector: (ea)=>( <img src={ea.image} width="50%" height="50%" alt=""/>),
+            width: "10%"
+     
+        }
     ]
 
     //styling 
@@ -43,13 +57,14 @@ function DataTableTwo() {
             style:{
             fontSize: '22px',
             color: 'gray',
-            backgroundColor: 'black'
+            backgroundColor: 'black',
+            height: "100px;"
 
         }},
         headCells:{
             style:{
             fontSize: '22px',
-            color: 'blue',
+            color: 'white',
             backgroundColor: 'gray'
 
         }}
@@ -76,11 +91,7 @@ function DataTableTwo() {
 
       //selected row data.  Note SelectedRows is a conserved variable of the package
 
-      const [selRowData, setSelRowData] = useState([{
-        title:'',
-        price:0,
-        description:'',
-      }])
+      const [selRowData, setSelRowData] = useState([{ }])
 
       
 
@@ -89,12 +100,12 @@ function DataTableTwo() {
         console.log(selRowData)
       }
      //selected data shows up in a span tag and is available for other uses
-     
+
       return (
         <div className='tableCont'>
             <h3>Second method for table of JSON server Data, using the react data table component package</h3>
             
-          <DataTable columns={columns} data={data} pagination selectableRows onSelectedRowsChange={handleSelected}customStyles={darkTheme}></DataTable>
+          <DataTable columns={columns} data={data} selectableRows onSelectedRowsChange={handleSelected}customStyles={darkTheme}></DataTable>
           <button onClick={()=>getData()}>Refresh Table</button>
           
           <span>{JSON.stringify(selRowData)}</span>

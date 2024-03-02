@@ -8,6 +8,7 @@ import './App.css';
 import SortProducts from './components/SortProducts';
 import DataTableTwo from './components/DataTableTwo';
 
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
    <DataSearch/>
    <SortProducts/>
    <DataFetch/>
+  
    
    
    

@@ -7,9 +7,11 @@ import {useTable, useSortBy} from 'react-table'
 import axios from "axios";
 
 function DataTable() {
+//make a container for data
+
   //GOAL is to present data table of database using react-table hooks and tools.  Not easy, but logical and powerful. This table is sortable!
 
-  //make a container for data
+  
   const [products, setProducts] = useState([{}]);
   //this is done to prevent reformulating data upon a reload
 
