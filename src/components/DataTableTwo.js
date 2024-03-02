@@ -74,11 +74,28 @@ function DataTableTwo() {
 
       //in the DataTable component, attributes can be added to customize functions in the table such as pagination, selectabl
 
+      //selected row data.  Note SelectedRows is a conserved variable of the package
+
+      const [selRowData, setSelRowData] = useState([{
+        title:'',
+        price:0,
+        description:'',
+      }])
+      
+      //this doesn't work completely, plus I need to figure out how to display the selected info.
+
+      const handleSelected=({selectedRows})=>{
+        setSelRowData({selectedRows})
+        console.log(selRowData)
+      }
+     
       return (
         <div className='tableCont'>
             
-          <DataTable columns={columns} data={data} pagination selectableRows customStyles={darkTheme}></DataTable>
+          <DataTable columns={columns} data={data} pagination selectableRows onSelectedRowsChange={handleSelected}customStyles={darkTheme}></DataTable>
           <button onClick={()=>getData()}>Refresh Table</button>
+          
+          <span>{ null}</span>
         </div>
       );
 }
