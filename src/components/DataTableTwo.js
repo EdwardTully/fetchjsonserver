@@ -81,7 +81,7 @@ function DataTableTwo() {
         price:0,
         description:'',
       }])
-      
+
       //this doesn't work completely, plus I need to figure out how to display the selected info.
 
       const handleSelected=({selectedRows})=>{
@@ -91,6 +91,7 @@ function DataTableTwo() {
      
       return (
         <div className='tableCont'>
+            <h3>Second method for table of JSON server Data, using the react data table component package</h3>
             
           <DataTable columns={columns} data={data} pagination selectableRows onSelectedRowsChange={handleSelected}customStyles={darkTheme}></DataTable>
           <button onClick={()=>getData()}>Refresh Table</button>
