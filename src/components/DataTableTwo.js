@@ -82,12 +82,13 @@ function DataTableTwo() {
         description:'',
       }])
 
-      //this doesn't work completely, plus I need to figure out how to display the selected info.
+      
 
       const handleSelected=({selectedRows})=>{
         setSelRowData({selectedRows})
         console.log(selRowData)
       }
+     //selected data shows up in a span tag and is available for other uses
      
       return (
         <div className='tableCont'>
@@ -96,7 +97,7 @@ function DataTableTwo() {
           <DataTable columns={columns} data={data} pagination selectableRows onSelectedRowsChange={handleSelected}customStyles={darkTheme}></DataTable>
           <button onClick={()=>getData()}>Refresh Table</button>
           
-          <span>{ null}</span>
+          <span>{JSON.stringify(selRowData)}</span>
         </div>
       );
 }
