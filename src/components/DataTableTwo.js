@@ -125,7 +125,7 @@ function DataTableTwo() {
         handleClearRows()}}>
         Submit Selected Items
       </button>
-      <FaCartShopping size="3em" />
+    <FaCartShopping size="3em"  />
       <DataTable
         columns={columns}
         data={data}
