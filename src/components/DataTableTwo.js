@@ -135,7 +135,6 @@ function DataTableTwo() {
       ></DataTable>
       <button onClick={() => getData()}>Refresh Table</button>
 
-      <span>{JSON.stringify(selRowData)}</span>
     </div>
   );
 }

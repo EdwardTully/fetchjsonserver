@@ -12,6 +12,7 @@ function DataPostForm() {
       category: "",
       price: 0,
       description: "",
+      image: ''
     },
   });
 
@@ -96,6 +97,14 @@ function DataPostForm() {
           })}
         />
         <p className="errorss">{errors.description?.message}</p>
+        <label htmlFor="description">Image URL</label>
+        <input
+          type="text"
+          id="image"
+          {...register("image", 
+          )}
+        />
+       
 
         <button>Enter Item</button>
       </form>
