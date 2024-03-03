@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
+import {FaCartShopping} from 'react-icons/fa6'
 import axios from "axios";
 
 function DataTableTwo() {
@@ -124,6 +125,7 @@ function DataTableTwo() {
         handleClearRows()}}>
         Submit Selected Items
       </button>
+      <FaCartShopping size="3em" />
       <DataTable
         columns={columns}
         data={data}
