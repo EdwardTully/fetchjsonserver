@@ -16,13 +16,13 @@ function DataTableTwo() {
       name: "Id",
       selector: (row) => row.id,
       sortable: true,
-      width: "5%",
+      width: "10%",
     },
     //add appropriate image path to db, in this case it is in public folder, but can be a link. Then have selector run a function which adds in the image file to the src attribute of the an inserted img tag.  That is all!!! NOTE ea.image
     {
-      name: "",
-      selector: (ea) => <img src={ea.image} width="50%" height="50%" alt="" />,
-      width: "10%",
+      name: "Item",
+      selector: (ea) => <a href={ea.image} target="_blank" rel="noopener noreferrer" ><img src={ea.image} width="50%" height="50%" alt="" /></a>,
+      width: "15%",
     },
     {
       name: "Title",
@@ -130,6 +130,7 @@ function DataTableTwo() {
         columns={columns}
         data={data}
         selectableRows
+        selectableRowsNoSelectAll
         selectableRowsHighlight
         onSelectedRowsChange={handleSelected}
         clearSelectedRows={toggledClearRows}
