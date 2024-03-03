@@ -96,7 +96,7 @@ function DataTableTwo() {
 
   const submitSelectItems = () => {
     axios
-      .post("http://localhost:3001/interests", selRowData)
+      .post("http://localhost:3001/Shopping_Cart", selRowData)
 
       .catch((error) => {
         console.log(error);
