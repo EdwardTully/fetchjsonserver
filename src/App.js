@@ -12,16 +12,12 @@ import DataTableTwo from './components/DataTableTwo';
 function App() {
   return (
     <div className="App">
-    <DataTable/>
-    <DataTableTwo/>
-   <DataPostForm/>
-   <DataSearch/>
-   <SortProducts/>
-   <DataFetch/>
-  
-   
-   
-   
+      <DataTable />
+      <DataTableTwo />
+      <DataPostForm />
+      <DataSearch />
+      <SortProducts />
+      <DataFetch />
     </div>
   );
 }
