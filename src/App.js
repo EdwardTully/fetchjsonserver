@@ -7,6 +7,7 @@ import DataTable from './components/DataTable'
 import './App.css';
 import SortProducts from './components/SortProducts';
 import DataTableTwo from './components/DataTableTwo';
+import ShopWindow from './components/ShopWindow';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <DataTable />
       <DataTableTwo />
+      <ShopWindow/>
       <DataPostForm />
       <DataSearch />
       <SortProducts />

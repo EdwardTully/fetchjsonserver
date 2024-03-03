@@ -96,3 +96,55 @@ table th, tfoot td {
   background-color: #04AA6D;
   color: white;
 }
+
+.shopWindow{
+width: 70%;
+margin: auto;
+border: 2px solid white;
+display: flex;
+flex-direction: horizontal;
+flex-wrap: wrap;
+
+
+}
+
+.itemCard{
+  width: 24%;
+  height: 400px;
+  background: white;
+  color: black;
+  border: 4px solid black;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: auto;
+
+
+}
+
+.cardWindow{
+  width: 300px;
+  height: 230px;
+  margin-top: 0px;
+  row-gap: 5px;
+  column-gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+
+
+}
+
+.cardWindow #itemPic{
+ max-width: 90%;
+ height: auto;
+ margin-top: 0px;
+}
+#description{
+
+}
+
+#price{
+
+}
