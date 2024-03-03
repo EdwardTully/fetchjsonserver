@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
-import axios from 'axios'
+import React, { useState } from "react";
+import axios from "axios";
 
 function DataFetch() {
   const [inventory, setInventory] = useState([]);
-
 
   const findInventory = () => {
     axios
@@ -17,7 +16,6 @@ function DataFetch() {
       });
   };
 
-
   // onSubmit={findInventory()}
   return (
     <div className="dataFetch">
@@ -26,7 +24,7 @@ function DataFetch() {
       <button type="submit" onClick={findInventory}>
         Show Inventory
       </button>
-      <br/>
+      <br />
       <div className="listCnt">
         <ul className="dataList">
           {inventory.map((ea) => (
@@ -41,4 +39,4 @@ function DataFetch() {
   );
 }
 
-export default DataFetch
+export default DataFetch;

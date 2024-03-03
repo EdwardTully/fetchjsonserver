@@ -1,17 +1,14 @@
-import React, {useMemo, useEffect, useState} from 'react'
-import COLUMNS from './columns'
-import {useTable, useSortBy} from 'react-table'
-
-
+import React, { useMemo, useEffect, useState } from "react";
+import COLUMNS from "./columns";
+import { useTable, useSortBy } from "react-table";
 
 import axios from "axios";
 
 function DataTable() {
-//make a container for data
+  //make a container for data
 
   //GOAL is to present data table of database using react-table hooks and tools.  Not easy, but logical and powerful. This table is sortable!
 
-  
   const [products, setProducts] = useState([{}]);
   //this is done to prevent reformulating data upon a reload
 
@@ -34,7 +31,7 @@ function DataTable() {
   };
 
   useEffect(() => getData, []);
- 
+
   //useEffect(setProducts(resData))
 
   //unpack table stuff and functions
@@ -51,7 +48,9 @@ function DataTable() {
   return (
     <div className="tableCont">
       <h3>Table of Database Items on JSON Server, react-table</h3>
-      <button onClick={() => getData()}>GET Updated Table, After First Render</button>
+      <button onClick={() => getData()}>
+        GET Updated Table, After First Render
+      </button>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
