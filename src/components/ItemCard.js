@@ -7,7 +7,7 @@ function ItemCard(props) {
         <div className='cardWindow'>
             <img id='itemPic' src={props.image} alt='noImage' />
         </div>
-        <span id="description">{props.description}</span>
+        <span id="description">{props.description}!!!</span>
         <span id="price"> Your's for only ${props.price}</span>
         
 

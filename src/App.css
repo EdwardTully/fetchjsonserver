@@ -98,7 +98,7 @@ table th, tfoot td {
 }
 
 .shopWindow{
-width: 70%;
+width: 80%;
 margin: auto;
 border: 2px solid white;
 display: flex;
@@ -142,9 +142,12 @@ flex-wrap: wrap;
  margin-top: 0px;
 }
 #description{
-
+font-weight: bold;
+font-size: 20px;
 }
 
 #price{
-
+font-weight: bold;
+font-size: 25px;
+color: rgb(226, 14, 14);
 }
